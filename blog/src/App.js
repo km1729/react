@@ -16,6 +16,15 @@ function App() {
     }
   }
 
+  function 리스트삭제(i){
+    var newArray = [...글제목];
+    console.log(newArray)
+    newArray.splice(i,1);
+
+    console.log(newArray)
+    글제목변경(newArray)
+  }
+
   function 제목바꾸기() {
     //var newArray = 글제목에 있던 0번째 데이터를 여자코트추천으로 바꿈\
     //  reference type vs copy
@@ -47,7 +56,7 @@ function App() {
               <div className="list" key={i}> 
                 <h3 onClick={ ()=>{ setModal(!modal); setNtitle(i)} } >{글제목[i]}
                 <span onClick={(e)=>{ e.stopPropagation(); 따봉업데이트(i)} }>❤️</span> {따봉[i]} 
-                <button> delete </button>
+                <button onClick={(e)=> { e.stopPropagation(); 리스트삭제(i); console.log(글제목[i]) } }> delete </button>
                 </h3> 
                 <p>2월 17일 발행</p>
                 <hr/>
