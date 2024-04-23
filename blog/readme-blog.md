@@ -178,7 +178,47 @@ event 객체가 담겨있다고 한다. e.target , e.target.value
 숙제
 1. 버튼누르면 글 하나 추가 되는 기능 만들기, 힌트 html 직접하나 만들 필요없음 state 조작하면됨
 2. array에 자료 추가하는법 찾기
+codingApple은 unshift? 사용
 
 숙제2
 글마다 삭제버튼 & 기능 만들기
 1. state
+
+React 옛날 문법 using class
+```
+class Modals2 extends React.Component{
+  constructor(){
+    super()
+  }
+  render(){
+    
+  }
+
+}
+```
+```
+//react 옛날 문법
+class Modals2 extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      name: '김',
+      age: 20
+    }
+  }
+  render(){
+    return(
+      <div>안녕 {this.state.age}
+        <button onClick={() => {
+          this.setState({age:21})
+        }}> 변경
+
+        </button>
+      </div>
+      
+    )
+  }
+}
+```
+
+`npm run build`

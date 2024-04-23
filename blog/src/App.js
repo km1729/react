@@ -69,7 +69,7 @@ function App() {
       onChange={ (e)=>{ set입력값(e.target.value); console.log(입력값) }}
       onKeyDown={ (e) => 제목추가하기(e, 입력값)}
       /> 
-      
+      <Modals2 />
       
     </div> //app
   );
@@ -86,5 +86,28 @@ function Modal(props){
   )
 }
 
+//react 옛날 문법
+class Modals2 extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      name: '김',
+      age: 20
+    }
+  }
+  render(){
+    return(
+      <div>안녕 {this.state.age}
+        <button onClick={() => {
+          this.setState({age:21})
+        }}> 변경
+
+        </button>
+      </div>
+      
+    )
+  }
+
+}
 
 export default App;
