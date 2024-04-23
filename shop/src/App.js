@@ -1,9 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import { Navbar, Nav, Container, Image  } from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col  } from 'react-bootstrap';
+import cat from './img/cat.jpg';
+import { useState } from "react";
+import data from './data'
 
 
 function App() {
+
+  let  [shoes ] = useState(data);
+  console.log(shoes[0].title);
+
   return (
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
@@ -16,8 +23,20 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-      <Image src="https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_1280.jpg" fluid />
+     <div className="main-bg" style={ {backgroundImage: 'url('+cat+')'} }></div>
+     <div className="Container">
+      <Row>
+        <Col>
+        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="80%"/>
+        <h4>{shoes[0].title}</h4>
+        <p>{shoes[0].price}</p>
+        </Col>
+        <Col>2 of 3</Col>
+        <Col>3 of 3</Col>
+      </Row>
+     </div>
     </div>
+    
   );
 }
 
